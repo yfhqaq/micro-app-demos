@@ -1,0 +1,10 @@
+{
+  "name": "example-qiankun-spa",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n main,first,second -c blue,green,magenta \"pnpm --filter qiankun-spa-main dev\" \"pnpm --filter qiankun-spa-micro-first dev\" \"pnpm --filter qiankun-spa-micro-second dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

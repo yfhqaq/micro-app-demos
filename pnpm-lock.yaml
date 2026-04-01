@@ -4,20 +4,17 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@qiankunjs/loader': file:../qiankun/packages/loader
-  '@qiankunjs/sandbox': file:../qiankun/packages/sandbox
-  '@qiankunjs/shared': file:../qiankun/packages/shared
-
 importers:
 
-  .:
+  .: {}
+
+  examples/qiankun-spa:
     devDependencies:
       concurrently:
         specifier: ^9.1.0
         version: 9.2.1
 
-  micro-first:
+  examples/qiankun-spa/micro-first:
     dependencies:
       react:
         specifier: ^18.3.1
@@ -54,7 +51,7 @@ importers:
         specifier: ^5.1.0
         version: 5.2.3(tslib@2.8.1)(webpack-cli@5.1.4)(webpack@5.105.4)
 
-  micro-second:
+  examples/qiankun-spa/micro-second:
     dependencies:
       react:
         specifier: ^18.3.1
@@ -91,11 +88,11 @@ importers:
         specifier: ^5.1.0
         version: 5.2.3(tslib@2.8.1)(webpack-cli@5.1.4)(webpack@5.105.4)
 
-  spa-main:
+  examples/qiankun-spa/spa-main:
     dependencies:
       qiankun:
-        specifier: file:../../qiankun/packages/qiankun
-        version: file:../qiankun/packages/qiankun
+        specifier: ^2.10.16
+        version: 2.10.16
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -550,15 +547,6 @@ packages:
   '@peculiar/x509@1.14.3':
     resolution: {integrity: sha512-C2Xj8FZ0uHWeCXXqX5B4/gVFQmtSkiuOolzAgutjTfseNOHT3pUjljDZsTSxXFGgio54bCzVFqmEOUrIVk8RDA==}
     engines: {node: '>=20.0.0'}
-
-  '@qiankunjs/loader@file:../qiankun/packages/loader':
-    resolution: {directory: ../qiankun/packages/loader, type: directory}
-
-  '@qiankunjs/sandbox@file:../qiankun/packages/sandbox':
-    resolution: {directory: ../qiankun/packages/sandbox, type: directory}
-
-  '@qiankunjs/shared@file:../qiankun/packages/shared':
-    resolution: {directory: ../qiankun/packages/shared, type: directory}
 
   '@remix-run/router@1.23.2':
     resolution: {integrity: sha512-Ic6m2U/rMjTkhERIa/0ZtXJP17QUi2CbWE7cqx4J58M8aA3QTfW+2UlQ4psvTX9IO1RfNVhK3pcpdjej7L+t2w==}
@@ -1042,9 +1030,6 @@ packages:
     resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
     engines: {node: '>= 12'}
 
-  compare-versions@6.1.1:
-    resolution: {integrity: sha512-4hm4VPpIecmlg59CHXnRDnqGplJFrbLG4aFEl5vl6cK1u76ws3LLvX7ikFnTDl5vo39sjWD6AaDPYodJp/NNHg==}
-
   compressible@2.0.18:
     resolution: {integrity: sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg==}
     engines: {node: '>= 0.6'}
@@ -1428,6 +1413,9 @@ packages:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
     engines: {node: '>=0.10.0'}
 
+  import-html-entry@1.17.0:
+    resolution: {integrity: sha512-2SDsRlGlE8bqdnGqsOyiDPEWlzJR0jNW4LWopnZl5QE1Yd0nJ7fykWo2GaKUF7Jq7pR0g3dElhuJHyamTt1gPQ==}
+
   import-local@3.2.0:
     resolution: {integrity: sha512-2SPlun1JUPWoM6t3F0dw0FkCF/jWY8kttcY4f599GLTSjh2OCuuhdTkJQsEcZzBqbXZGKMK2OqW1oZsjtf/gQA==}
     engines: {node: '>=8'}
@@ -1748,8 +1736,8 @@ packages:
     resolution: {integrity: sha512-KTqnxsgGiQ6ZAzZCVlJH5eOjSnvlyEgx1m8bkRJfOhmGRqfo5KLvmAlACQkrjEtOQ4B7wF9TdSLIs9O90MX9xA==}
     engines: {node: '>=16.0.0'}
 
-  qiankun@file:../qiankun/packages/qiankun:
-    resolution: {directory: ../qiankun/packages/qiankun, type: directory}
+  qiankun@2.10.16:
+    resolution: {integrity: sha512-Q3tSVUrPnzx8ckEOKIoPnhb5LE28FPKyan/r6jEuGJGqTbIy+3rp6E2/KfU82ZI4yZpef9LFTrnxdj49jAEsmw==}
 
   qs@6.14.2:
     resolution: {integrity: sha512-V/yCWTTF7VJ9hIh18Ugr2zhJMP01MY7c5kh4J870L7imm6/DIzBsNLTXzMwUA3yZ5b/KBqLx8Kp3uRvd7xSe3Q==}
@@ -1933,8 +1921,8 @@ packages:
     resolution: {integrity: sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==}
     engines: {node: '>= 0.4'}
 
-  single-spa@6.0.3:
-    resolution: {integrity: sha512-pXlwHXHhs3hx/MnGQHBLdFCVAN2rlm9TLBKazbDMyZ25QRxoen2vlUZ47MyXKa9K8Gd5UZs/gkuQad4TGbViwg==}
+  single-spa@5.9.5:
+    resolution: {integrity: sha512-9SQdmsyz4HSP+3gs6PJzhkaMEg+6zTlu9oxIghnwUX3eq+ajq4ft5egl0iyR55LAmO/UwvU8NgIWs/ZyQMa6dw==}
 
   sockjs@0.3.24:
     resolution: {integrity: sha512-GJgLTZ7vYb/JtPSSZ10hsOYIvEYsjbNU+zPdIHcUaWVNUEPivzxku31865sSSud0Da0W4lEeOPlmw93zLQchuQ==}
@@ -2704,25 +2692,6 @@ snapshots:
       tslib: 2.8.1
       tsyringe: 4.10.0
 
-  '@qiankunjs/loader@file:../qiankun/packages/loader':
-    dependencies:
-      '@babel/runtime': 7.29.2
-      '@qiankunjs/sandbox': file:../qiankun/packages/sandbox
-      '@qiankunjs/shared': file:../qiankun/packages/shared
-      lodash: 4.17.23
-
-  '@qiankunjs/sandbox@file:../qiankun/packages/sandbox':
-    dependencies:
-      '@babel/runtime': 7.29.2
-      '@qiankunjs/shared': file:../qiankun/packages/shared
-      lodash: 4.17.23
-
-  '@qiankunjs/shared@file:../qiankun/packages/shared':
-    dependencies:
-      '@babel/runtime': 7.29.2
-      compare-versions: 6.1.1
-      lodash: 4.17.23
-
   '@remix-run/router@1.23.2': {}
 
   '@rolldown/pluginutils@1.0.0-beta.27': {}
@@ -3202,8 +3171,6 @@ snapshots:
 
   commander@8.3.0: {}
 
-  compare-versions@6.1.1: {}
-
   compressible@2.0.18:
     dependencies:
       mime-db: 1.54.0
@@ -3616,6 +3583,10 @@ snapshots:
     dependencies:
       safer-buffer: 2.1.2
 
+  import-html-entry@1.17.0:
+    dependencies:
+      '@babel/runtime': 7.29.2
+
   import-local@3.2.0:
     dependencies:
       pkg-dir: 4.2.0
@@ -3888,14 +3859,12 @@ snapshots:
 
   pvutils@1.1.5: {}
 
-  qiankun@file:../qiankun/packages/qiankun:
+  qiankun@2.10.16:
     dependencies:
       '@babel/runtime': 7.29.2
-      '@qiankunjs/loader': file:../qiankun/packages/loader
-      '@qiankunjs/sandbox': file:../qiankun/packages/sandbox
-      '@qiankunjs/shared': file:../qiankun/packages/shared
+      import-html-entry: 1.17.0
       lodash: 4.17.23
-      single-spa: 6.0.3
+      single-spa: 5.9.5
 
   qs@6.14.2:
     dependencies:
@@ -4136,7 +4105,7 @@ snapshots:
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
 
-  single-spa@6.0.3: {}
+  single-spa@5.9.5: {}
 
   sockjs@0.3.24:
     dependencies:

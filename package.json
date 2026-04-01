@@ -1,0 +1,7 @@
+{
+  "name": "micro-app-demos",
+  "private": true,
+  "scripts": {
+    "dev:qiankun-spa": "pnpm --filter example-qiankun-spa dev"
+  }
+}
