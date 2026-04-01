@@ -1,0 +1,4 @@
+packages:
+  - 'spa-main'
+  - 'micro-first'
+  - 'micro-second'
